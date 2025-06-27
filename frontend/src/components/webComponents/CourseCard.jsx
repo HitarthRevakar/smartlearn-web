@@ -1,6 +1,7 @@
 // ----------------------------- import links ---------------------------------- //
 import ArrowRight from '../../assets/images/png/right-arrow.png';
 import Clock from '../../assets/images/png/clock.png';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({ image, category, title, duration, isList, showDivider }) => {
     return (
@@ -30,13 +31,13 @@ const CourseCard = ({ image, category, title, duration, isList, showDivider }) =
                                 {duration}
                             </p>
 
-                            <a
-                                href="#"
+                            <Link
+                                to="/courses/coursecontent"
                                 className="flex items-center  font-semibold text-[#1488CC]  mt-auto"
                             >
                                 Learn More
                                 <img src={ArrowRight} className="ml-2 w-7 h-4" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     {showDivider && <hr className="border-t border-gray-200 my-4" />}
@@ -62,12 +63,12 @@ const CourseCard = ({ image, category, title, duration, isList, showDivider }) =
                             {duration}
                         </p>
                     </div>
-                    <a
-                        href="#"
+                    <Link
+                        to="/courses/coursecontent"
                         className="mt-auto flex justify-end items-center bg-[#EDF2FF] px-3 py-2 text-black font-[600]"
                     >
                         Learn More <img src={ArrowRight} className="ml-2 w-7 h-4" />
-                    </a>
+                    </Link>
                 </div>
             )}
         </>
