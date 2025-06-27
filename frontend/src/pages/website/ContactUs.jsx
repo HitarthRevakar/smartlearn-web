@@ -6,10 +6,14 @@ import facebook from "../../assets/images/png/contactus-facebook.png";
 import instagram from "../../assets/images/png/conatctus-instagram.png";
 import linkedin from "../../assets/images/png/contactus-linkedin.png";
 import locationicon from "../../assets/images/png/contactus-location-icon.png";
+import Banner from "../../components/webComponents/Banner";
+import contactusbanner from '../../assets/images/png/contactus-banner.png'
 
 const ContactUs = () => {
   return (
-    <div className="w-full p-6 md:pt-[50px] flex flex-col">
+    <div className="w-full">
+      <Banner title={"Contact Us"} image={contactusbanner} className="banner "/>
+      <div className="w-full p-6 md:pt-[50px] flex flex-col">
       <div className="flex flex-col w-full rounded-lg md:shadow-lg md:border border-[#EBEBEB] sm:border-0">
         <div className="flex flex-col sm:flex-col md:flex-row">
           
@@ -117,6 +121,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
