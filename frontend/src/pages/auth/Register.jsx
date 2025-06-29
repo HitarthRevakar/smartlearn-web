@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import background from '../../assets/images/png/auth-background.png'
+import React, { useState } from 'react'
+import background from '../../assets/images/png/auth-bg.png'
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Eye, EyeOff } from 'lucide-react';
@@ -40,11 +40,11 @@ const countries = [
 ];
 
 const Register = () => {
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
-   const handleSubmit = (values, { setSubmitting, resetForm }) => {
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('Sign up form submitted with values:', values);
     setTimeout(() => {
       alert('Account created successfully!');
@@ -53,202 +53,197 @@ const Register = () => {
     }, 1000);
   };
   return (
-    <div className='min-h-screen'>
+    <div className="relative w-full min-h-screen md:py-12">
+      {/* --------------------- Background Image ------------------------ */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={background}
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-      {/* Background Pattern */}
-         <div className="absolute inset-0">
-             <img src={background} className='w-full'/>
-         </div>
+      <div className="relative z-10 flex justify-center items-center  w-full px-4 py-8 lg:px-20">
+        <div className="bg-[#D3DFFF] md:rounded-[50px] rounded-[30px] w-full flex flex-col lg:flex-row items-center overflow-hidden shadow-lg">
 
-      <div className='relative max-w-[1720px] px-[100px] py-[123px]'>
-        <div className='bg-[#D3DFFF] rounded-[50px] flex flex-row items-center justify-center'>
-
-          {/* left side */}
-          <div className='lg:flex md:flex hidden flex-col gap-[250px] lg:w-[580px] md:w-[373px]'>
-            <div className='font-semibold text-center text-[40px] lg:w-[475px] md:w-[329px] lg:h-[170px] md:h-[192px]'>
+          {/* ------------------------------ Left Side - Banner & Image ----------------------------------------- */}
+          <div className="w-full hidden lg:w-1/2 lg:flex flex-col justify-center items-center py-8 px-8 lg:py-12 gap-30">
+            <h2 className="text-[clamp(48px,4vw,64px)] banner font-semibold text-center leading-snug text-gray-800 mb-6 lg:mb-8">
               ELEVATE YOUR LEARNING TO THE NEXT LEVEL
-            </div>
-            <div className='w-full flex items-center justify-center'>
-                <img src={authimage}/>
+            </h2>
+            <div className="w-full max-w-[300px] lg:max-w-[350px]">
+              <img
+                src={authimage}
+                alt="auth"
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
 
-          {/* right side */}
-          <div className='w-[1140px] bg-white rounded-[50px] flex flex-col gap-[10px]'>
-              <div className='w-full xl:px-[140px] lg:px-[80px] md:px-[40px]'>
-                <h2 className='font-bold text-3xl'>
-                Sign Up
-                <h6 className='font-normal text-xs'>
-                  create an account
-                </h6>
-              </h2>
-              </div>
-              {/* form */}
-              <div className='w-full xl:px-[140px] lg:px-[80px] md:px-[40px] pb-[37px]'>
-                <Formik
-                  initialValues={signUpInitialValues}
-                  validationSchema={signUpValidationSchema}
-                  onSubmit={handleSubmit}
-                >
-                  {({ isSubmitting, touched, errors, handleSubmit: formikHandleSubmit }) => (
-                    <div className="space-y-6">
-                      {/* Full Name Field */}
-                      <div>
-                        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name
-                        </label>
-                        <Field
-                          type="text"
-                          id="fullName"
-                          name="fullName"
-                          placeholder="Name"
-                          className={`w-full px-4 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ${
-                            touched.fullName && errors.fullName ? 'border-red-500' : 'border-gray-300'
-                          }`}
-                        />
-                        <ErrorMessage name="fullName" component="div" className="mt-1 text-sm text-red-600" />
-                      </div>
+          {/* ------------------------------------------ Right Side - Form -------------------------------------- */}
+          <div className="w-full lg:w-[100%] bg-white md:rounded-[50px] rounded-[30px]  px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 shadow-2xl">
 
-                      {/* Email Field */}
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                          Email
-                        </label>
-                        <Field
-                          type="email"
-                          id="email"
-                          name="email"
-                          placeholder="Email"
-                          className={`w-full px-4 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ${
-                            touched.email && errors.email ? 'border-red-500' : 'border-gray-300'
-                          }`}
-                        />
-                        <ErrorMessage name="email" component="div" className="mt-1 text-sm text-red-600" />
-                      </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1">Sign Up</h2>
+            <p className="text-sm text-gray-500 mb-6 lg:mb-8">Create an account</p>
+            <Formik
+              initialValues={signUpInitialValues}
+              validationSchema={signUpValidationSchema}
+              onSubmit={handleSubmit}
+            >
+              {({ isSubmitting, touched, errors, handleSubmit: formikHandleSubmit }) => (
+                <div className="space-y-4 lg:space-y-6">
+                  {/* Full Name */}
+                  <div>
+                    <label htmlFor="fullName" className="block text-sm font-medium mb-2 text-gray-700">
+                      Full Name
+                    </label>
+                    <Field
+                      id="fullName"
+                      name="fullName"
+                      placeholder="Enter your name"
+                      className={`w-full px-3 py-2.5 lg:px-4 lg:py-3 rounded-lg border ${touched.fullName && errors.fullName ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                    />
+                    <ErrorMessage name="fullName" component="div" className="text-sm text-red-600 mt-1" />
+                  </div>
 
-                      {/* Password Field */}
-                      <div>
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                          Password
-                        </label>
-                        <div className="relative">
-                          <Field
-                            type={showPassword ? "text" : "password"}
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            className={`w-full px-4 py-3 pr-12 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ${
-                              touched.password && errors.password ? 'border-red-500' : 'border-gray-300'
-                            }`}
-                          />
-                          <button
-                            type="button"
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                          >
-                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                          </button>
-                        </div>
-                        <ErrorMessage name="password" component="div" className="mt-1 text-sm text-red-600" />
-                      </div>
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700">
+                      Email
+                    </label>
+                    <Field
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      className={`w-full px-3 py-2.5 lg:px-4 lg:py-3 rounded-lg border ${touched.email && errors.email ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                    />
+                    <ErrorMessage name="email" component="div" className="text-sm text-red-600 mt-1" />
+                  </div>
 
-                      {/* Confirm Password Field */}
-                      <div>
-                        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                          Confirm Password
-                        </label>
-                        <div className="relative">
-                          <Field
-                            type={showConfirmPassword ? "text" : "password"}
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
-                            className={`w-full px-4 py-3 pr-12 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ${
-                              touched.confirmPassword && errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
-                            }`}
-                          />
-                          <button
-                            type="button"
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                            className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                          >
-                            {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                          </button>
-                        </div>
-                        <ErrorMessage name="confirmPassword" component="div" className="mt-1 text-sm text-red-600" />
-                      </div>
-
-                      {/* Country Field */}
-                      <div>
-                        <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
-                          Country
-                        </label>
-                        <Field
-                          as="select"
-                          id="country"
-                          name="country"
-                          className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ${
-                            touched.country && errors.country ? 'border-red-500' : 'border-gray-300'
-                          }`}
-                        >
-                          {countries.map((country) => (
-                            <option key={country.value} value={country.value}>
-                              {country.label}
-                            </option>
-                          ))}
-                        </Field>
-                        <ErrorMessage name="country" component="div" className="mt-1 text-sm text-red-600" />
-                      </div>
-
-                      {/* Instructor Checkbox */}
-                      <div className="flex items-center">
-                        <Field
-                          type="checkbox"
-                          id="wantToBeInstructor"
-                          name="wantToBeInstructor"
-                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                        />
-                        <label htmlFor="wantToBeInstructor" className="ml-3 block text-sm text-gray-700">
-                          Want to become an instructor?
-                        </label>
-                      </div>
-
-                      {/* Submit Button */}
-                      <div className="pt-4">
-                        <button
-                          type="button"
-                          onClick={formikHandleSubmit}
-                          disabled={isSubmitting}
-                          className={`w-full py-3 px-4 bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ${
-                            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-                          }`}
-                        >
-                          {isSubmitting ? 'Creating Account...' : 'Sign Up'}
-                        </button>
-                      </div>
-
-                      {/* Sign In Link */}
-                      <div className="text-center pt-4">
-                        <p className="text-sm text-gray-600">
-                          Are you a member?{' '}
-                          <button
-                            type="button"
-                            className="text-blue-600 hover:text-blue-500 font-medium cursor-pointer"
-                            onClick={() =>navigate('/auth/login')}
-                          >
-                            Sign In
-                          </button>
-                        </p>
-                      </div>
+                  {/* Password */}
+                  <div>
+                    <label htmlFor="password" className="block text-sm font-medium mb-2 text-gray-700">
+                      Password
+                    </label>
+                    <div className="relative">
+                      <Field
+                        id="password"
+                        name="password"
+                        type={showPassword ? 'text' : 'password'}
+                        placeholder="Enter your password"
+                        className={`w-full px-3 py-2.5 lg:px-4 lg:py-3 pr-10 lg:pr-12 rounded-lg border ${touched.password && errors.password ? 'border-red-500' : 'border-gray-300'
+                          } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                      >
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
                     </div>
-                  )}
-                </Formik>
-              </div>
-          </div>  
-        </div>
-      </div> 
+                    <ErrorMessage name="password" component="div" className="text-sm text-red-600 mt-1" />
+                  </div>
 
+                  {/* Confirm Password */}
+                  <div>
+                    <label htmlFor="confirmPassword" className="block text-sm font-medium mb-2 text-gray-700">
+                      Confirm Password
+                    </label>
+                    <div className="relative">
+                      <Field
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        type={showConfirmPassword ? 'text' : 'password'}
+                        placeholder="Confirm your password"
+                        className={`w-full px-3 py-2.5 lg:px-4 lg:py-3 pr-10 lg:pr-12 rounded-lg border ${touched.confirmPassword && errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+                          } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                      >
+                        {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                    <ErrorMessage name="confirmPassword" component="div" className="text-sm text-red-600 mt-1" />
+                  </div>
+
+                  {/* Country */}
+                  <div>
+                    <label htmlFor="country" className="block text-sm font-medium mb-2 text-gray-700">
+                      Country
+                    </label>
+                    <Field
+                      as="select"
+                      id="country"
+                      name="country"
+                      className={`w-full px-3 py-2.5 lg:px-4 lg:py-3 rounded-lg border ${touched.country && errors.country ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white`}
+                    >
+                      {countries.map((c) => (
+                        <option key={c.value} value={c.value}>
+                          {c.label}
+                        </option>
+                      ))}
+                    </Field>
+                    <ErrorMessage name="country" component="div" className="text-sm text-red-600 mt-1" />
+                  </div>
+
+                  {/* Instructor Checkbox */}
+                  <div className="flex items-start gap-3">
+                    <Field
+                      type="checkbox"
+                      id="wantToBeInstructor"
+                      name="wantToBeInstructor"
+                      className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5"
+                    />
+                    <label htmlFor="wantToBeInstructor" className="text-sm text-gray-700 leading-relaxed">
+                      Want to become an instructor?
+                    </label>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={formikHandleSubmit}
+                      disabled={isSubmitting}
+                      className={`w-full py-2.5 lg:py-3 rounded-lg bg-[#1488CC]  text-white font-medium transition-all duration-200 ${isSubmitting
+                        ? 'opacity-50 cursor-not-allowed'
+                        : 'hover:bg-[#1488CC]/90 hover:shadow-md active:transform active:scale-[0.98]'
+                        }`}
+                    >
+                      {isSubmitting ? 'Creating Account...' : 'Sign Up'}
+                    </button>
+                  </div>
+
+                  {/* Login Link */}
+                  <div className="text-center pt-2">
+                    <p className="text-sm text-gray-600">
+                      Already have an account?{' '}
+                      <button
+                        type="button"
+                        onClick={() => navigate('/auth/login')}
+                        className="text-[#1488CC] hover:text-[#1488CC]/90 hover:underline font-medium transition-colors"
+                      >
+                        Sign In
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              )}
+            </Formik>
+          </div>
+        </div>
+      </div>
     </div>
+
+
   )
 }
 
