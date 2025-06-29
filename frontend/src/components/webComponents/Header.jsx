@@ -30,7 +30,7 @@ const Header = () => {
     { name: "Contact Us", path: "/contactus" },
   ];
   return (
-    <header className="w-full">
+    <header className="w-full sticky top-0 z-10 bg-white ">
       {/* ------------------- Top bar with contact info  ------------------ */}
       <div className="bg-black text-white py-3 px-12">
         <div className="w-full  flex lg:justify-between md:justify-end justify-end items-center text-sm">
@@ -75,14 +75,14 @@ const Header = () => {
       </div>
 
       {/* ----------------------------------- main navigation --------------------------------------- */}
-      <div className=" py-3 px-12">
+      <div className=" py-3 lg:px-12 px-3">
         <div className="w-full flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center ">
             <img
               src={smartlearnlogo}
               alt="SmartLearn Logo"
-              className="w-[180px] h-[75px] rounded object-contain"
+              className="w-[180px] h-[75px] object-contain"
             />
           </div>
 

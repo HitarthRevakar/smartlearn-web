@@ -37,7 +37,7 @@ const InquiryForm = () => {
   };
 
   return (
-    <div className=''>
+    <div className='w-full h-full flex flex-col justify-center'>
         <h2 className='text-2xl font-bold text-center mb-[20px]'>Inquiry Form</h2>
         <Formik
         initialValues={inquiryInitialValues}
@@ -155,11 +155,11 @@ const InquiryForm = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="text-center pt-4">
+            <div className="text-center py-4">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`px-8 py-2 bg-[#1488CC] text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ${
+                className={`px-8 py-2 bg-[#1488CC] text-white font-medium rounded-md shadow-sm focus:outline-none  ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
