@@ -1,11 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from '../components/webComponents/Header'
+import Footer from '../components/webComponents/Footer'
 
 const WebLayoute = () => {
   return (
-    <div>Header
-        outlet
-        footer
-    </div>
+    <>
+      <Header/>
+      <Outlet/>
+      <Footer/>
+    </>
   )
 }
 
