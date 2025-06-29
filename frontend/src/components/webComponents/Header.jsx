@@ -4,11 +4,12 @@ import smartlearnlogo from '../../assets/images/png/smartlearn-logo.png'
 import phoneicon from '../../assets/images/png/phone-icon.png'
 import mailicon from '../../assets/images/png/mail-icon.png'
 import closebtn from '../../assets/images/png/close-btn.png'
-import { useNavigate } from "react-router";
+import { useNavigate,useLocation } from "react-router";
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -92,16 +93,14 @@ const Header = () => {
           {/* ---------------------------------- Navbar --------------------------------------------- */}
           <nav className="hidden md:flex items-center xl:space-x-15 lg:space-x-15 md:space-x-7">
             {navLinks.slice(0, 4).map((link, index) => (
-              <a
-                key={link.name}
-                href={link.path}
-                className={`text-gray-700 hover:text-[#1488CC] font-medium transition-colors relative ${index === 0 ? 'text-blue-500' : ''
-                  }`}
-              >
+             <a
+        key={link.name}
+        href={link.path}
+        className={`text-gray-700 hover:text-[#1488CC] font-medium transition-colors relative ${
+          location.pathname === link.path ? '!text-[#1488CC] font-bold' : ''
+        }`}
+      >
                 {link.name}
-                {/* {index === 0 && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500"></div>
-                )} */}
               </a>
             ))}
           </nav>

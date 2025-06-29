@@ -22,14 +22,14 @@ const ContactUs = () => {
           <div className="lg:w-[50%] md:w-[80%] w-full flex justify-center ">
             <div className="flex flex-col w-full gap-6">
               <div className="p-5 flex flex-col gap-9 bg-[#EDF2FF] rounded-l-lg px-5 tablet:py-10">
-                <p className="font-semibold lg:text-start text-center  text-[clamp(1.5rem,2.5vw,2rem)] text-[#1488CC]">
+                <p className="font-semibold lg:text-start text-center  text-[clamp(24px,2.5vw,32px)] text-[#1488CC]">
                   USA
                 </p>
                 <div className="flex gap-5 items-center">
                   <img src={callicon} className="w-[25px] h-[25px]" />
                   <a
                     href="tel:(+1) 123 456 7890"
-                    className="text-[clamp(20px,1.5vw,24px)] font-[500] text-black "
+                    className="text-[clamp(16px,2vw,24px)] font-[500] text-black "
                   >
                     (+1) 123 456 7890
                   </a>
@@ -38,7 +38,7 @@ const ContactUs = () => {
                   <img src={mailicon} className="w-[25px] h-[24px]" />
                   <a
                     href="mailto:demo@gmail.com"
-                    className="text-[clamp(19px,1.5vw,24px)] break-words font-[500] text-black"
+                    className="text-[clamp(16px,2vw,24px)] break-words font-[500] text-black"
                   >
                     demo@gmail.com
                   </a>
@@ -52,21 +52,21 @@ const ContactUs = () => {
                     href=""
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[clamp(20px,1.5vw,24px)] font-[500] text-black "
+                    className="text-[clamp(16px,2vw,24px)] font-[500] text-black "
                   >
                     Lorem ipsum dolor sit amet consectetur. Vel elementum massa
                     mauris augue pretium. Id.
                   </a>
                 </div>
 
-                <p className="font-semibold lg:text-start text-center  text-[clamp(1.5rem,2.5vw,2rem)] text-[#1488CC]">
+                <p className="font-semibold lg:text-start text-center  text-[clamp(24px,2.5vw,34px)] text-[#1488CC]">
                   INDIA
                 </p>
                 <div className="flex gap-5 items-center">
                   <img src={callicon} className="w-[25px] h-[25px]" />
                   <a
                     href="tel:(+91) 123 456 7890"
-                    className="text-[clamp(20px,1.5vw,24px)] font-[500] text-black "
+                    className="text-[clamp(16px,2vw,24px)] font-[500] text-black "
                   >
                     (+91) 123 456 7890
                   </a>
@@ -75,7 +75,7 @@ const ContactUs = () => {
                   <img src={mailicon} className="w-[25px] h-[24px]" />
                   <a
                     href="mailto:demo@gmail.com"
-                    className="text-[clamp(19px,1.5vw,24px)] break-words font-[500] text-black"
+                    className="text-[clamp(16px,2vw,24px)] break-words font-[500] text-black"
                   >
                     demo@gmail.com
                   </a>
@@ -89,14 +89,14 @@ const ContactUs = () => {
                     href=""
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[clamp(20px,1.5vw,24px)] font-[500] text-black "
+                    className="text-[clamp(16px,2vw,24px)] font-[500] text-black "
                   >
                     Lorem ipsum dolor sit amet consectetur. Vel elementum massa
                     mauris augue pretium. Id.
                   </a>
                 </div>
                 <div className="justify-center items-center w-full ">
-                <div className="flex justify-center items-center gap-[40px] ">
+                <div className="flex lg:gap-[40px] gap-[35px]">
                   <a href="" target="_blank">
                     <img src={facebook} alt="Facebook" />
                   </a>

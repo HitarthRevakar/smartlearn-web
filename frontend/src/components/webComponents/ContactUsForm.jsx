@@ -12,7 +12,14 @@ const ContactUsForm = () => {
         <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        // onSubmit={} work on later....
+        onSubmit={(values, { setSubmitting, resetForm }) => {
+    console.log('Form submitted with values:', values);
+    setTimeout(() => {
+      alert('Your message has been sent!');
+      setSubmitting(false);
+      resetForm();
+    }, 1000);
+  }} 
       >
         {({ errors, touched, isSubmitting }) => (
           <Form className="w-full flex flex-col gap-6" >
@@ -20,12 +27,12 @@ const ContactUsForm = () => {
             {/*----------------------------------- First & Last Name -----------------------------------*/}
 
             <div className="w-full flex flex-col gap-6 lg:flex-row">
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
                 <label>First Name</label>
                 <Field name="firstName" type="text" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none" />
                 {touched.firstName && errors.firstName && (<p className="text-red-500 text-sm">{errors.firstName}</p>)}
               </div>
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
                 <label>Last Name</label>
                 <Field name="lastName" type="text" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none" />
                 {touched.lastName && errors.lastName && (<p className="text-red-500 text-sm">{errors.lastName}</p>)}
@@ -35,12 +42,12 @@ const ContactUsForm = () => {
             {/*--------------------------------------------- Email & Phone --------------------------------------*/}
 
             <div className="w-full flex flex-col gap-6 lg:flex-row">
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
                 <label>Email</label>
                 <Field name="email" type="email" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none" />
                 {touched.email && errors.email && (<p className="text-red-500 text-sm">{errors.email}</p>)}
               </div>
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
                 <label>Phone Number</label>
                 <Field name="phoneNumber" type="tel" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none" />
                 {touched.phoneNumber && errors.phoneNumber && (<p className="text-red-500 text-sm">{errors.phoneNumber}</p>)}
@@ -49,7 +56,7 @@ const ContactUsForm = () => {
 
             {/*------------------------------------------------- Subject ------------------------------------------*/}
 
-            <div className="w-full flex flex-col gap-2">
+            <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
               <label>Subject</label>
               <Field name="subject" type="text" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none" />
               {touched.subject && errors.subject && (<p className="text-red-500 text-sm">{errors.subject}</p>)}
@@ -57,7 +64,7 @@ const ContactUsForm = () => {
 
             {/*------------------------------------------------- Message --------------------------------------*/}
 
-            <div className="w-full flex flex-col gap-2">
+            <div className="w-full flex flex-col gap-2 text-[clamp(16px,1.5vw,20px)]">
               <label>Message</label>
               <Field name="message" as="textarea" className="border-b-2 py-2 border-[#A1A1A1] focus:outline-none resize-none" />
               {touched.message && errors.message && (<p className="text-red-500 text-sm">{errors.message}</p>)}
@@ -65,7 +72,7 @@ const ContactUsForm = () => {
 
             {/*--------------------------------------------------- Submit -----------------------------------------*/}
 
-            <div className="w-full flex 760:justify-end justify-center">
+            <div className="w-full flex lg:justify-end sm:justify-end justify-center">
               <button type="submit" disabled={isSubmitting} className="text-white bg-[#1488CC] cursor-pointer text-[20px] rounded-[10px] font-semibold !py-[7px] !px-[30px]">Send Message</button>
             </div>
           </Form>
