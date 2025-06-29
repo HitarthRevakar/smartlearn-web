@@ -4,10 +4,11 @@ import smartlearnlogo from '../../assets/images/png/smartlearn-logo.png'
 import phoneicon from '../../assets/images/png/phone-icon.png'
 import mailicon from '../../assets/images/png/mail-icon.png'
 import closebtn from '../../assets/images/png/close-btn.png'
-
+import { useNavigate } from "react-router";
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -59,12 +60,14 @@ const Header = () => {
             ) : (
               <>
                 <button
-                  className="bg-[#1488CC] hover:bg-[#1488CC]/90 px-4 py-1 rounded text-white transition-colors"
+                  className="bg-[#1488CC] hover:bg-[#1488CC]/90 px-4 py-1 rounded text-white transition-colors cursor-pointer"
+                  onClick={()=>navigate('/auth/register')}
                 >
                   Register
                 </button>
                 <button
-                  className="bg-[#1488CC] hover:bg-[#1488CC]/90 px-4 py-1 rounded text-white transition-colors"
+                  className="bg-[#1488CC] hover:bg-[#1488CC]/90 px-4 py-1 rounded text-white transition-colors cursor-pointer"
+                  onClick={()=>navigate('/auth/login')}
                 >
                   Login
                 </button>

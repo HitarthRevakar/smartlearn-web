@@ -4,6 +4,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Eye, EyeOff } from 'lucide-react';
 import authimage from '../../assets/images/png/authimage.png';
+import { useNavigate } from "react-router";
 
 const signUpValidationSchema = Yup.object({
   fullName: Yup.string().required('Full name is required'),
@@ -41,6 +42,8 @@ const countries = [
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
+
    const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('Sign up form submitted with values:', values);
     setTimeout(() => {
@@ -49,48 +52,39 @@ const Register = () => {
       resetForm();
     }, 1000);
   };
-    return (
-    // <div className='bg-[#D3DFFF66] '>
-    //     <img src={background} alt='background-image' className='w-full min-h-screen'/>
-    // </div>
-    <div className="min-h-screen flex items-center justify-center p-4">
+  return (
+    <div className='min-h-screen'>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0">
-            <img src={background} className='w-full'/>
-        </div>
-      </div>
+         <div className="absolute inset-0">
+             <img src={background} className='w-full'/>
+         </div>
 
-      <div className="relative w-full max-w-6xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="flex flex-col lg:flex-row">
-            {/* Left Side - Illustration */}
-            <div className="lg:w-1/2 bg-[#D3DFFF] p-8 lg:p-12 flex flex-col justify-center items-center text-white relative">
-              <div className="text-center mb-8">
-                <h1 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-                  ELEVATE YOUR LEARNING<br />
-                  TO THE NEXT LEVEL
-                </h1>
-              </div>
-              
-              {/* Illustration Placeholder */}
-              <div className="w-full max-w-md h-64 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <img src={authimage}/>
-                  </div>
-                </div>
-              </div>
+      <div className='relative max-w-[1720px] px-[100px] py-[123px]'>
+        <div className='bg-[#D3DFFF] rounded-[50px] flex flex-row items-center justify-center'>
+
+          {/* left side */}
+          <div className='lg:flex md:flex hidden flex-col gap-[250px] lg:w-[580px] md:w-[373px]'>
+            <div className='font-semibold text-center text-[40px] lg:w-[475px] md:w-[329px] lg:h-[170px] md:h-[192px]'>
+              ELEVATE YOUR LEARNING TO THE NEXT LEVEL
             </div>
+            <div className='w-full flex items-center justify-center'>
+                <img src={authimage}/>
+            </div>
+          </div>
 
-            {/* Right Side - Sign Up Form */}
-            <div className="lg:w-1/2 p-8 lg:p-12">
-              <div className="max-w-md mx-auto">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">Sign Up</h2>
-                  <p className="text-gray-600">Create an account</p>
-                </div>
-
+          {/* right side */}
+          <div className='w-[1140px] bg-white rounded-[50px] flex flex-col gap-[10px]'>
+              <div className='w-full xl:px-[140px] lg:px-[80px] md:px-[40px]'>
+                <h2 className='font-bold text-3xl'>
+                Sign Up
+                <h6 className='font-normal text-xs'>
+                  create an account
+                </h6>
+              </h2>
+              </div>
+              {/* form */}
+              <div className='w-full xl:px-[140px] lg:px-[80px] md:px-[40px] pb-[37px]'>
                 <Formik
                   initialValues={signUpInitialValues}
                   validationSchema={signUpValidationSchema}
@@ -239,8 +233,8 @@ const Register = () => {
                           Are you a member?{' '}
                           <button
                             type="button"
-                            className="text-blue-600 hover:text-blue-500 font-medium"
-                            onClick={() => alert('Navigate to Sign In page')}
+                            className="text-blue-600 hover:text-blue-500 font-medium cursor-pointer"
+                            onClick={() =>navigate('/auth/login')}
                           >
                             Sign In
                           </button>
@@ -250,10 +244,10 @@ const Register = () => {
                   )}
                 </Formik>
               </div>
-            </div>
-          </div>
+          </div>  
         </div>
-      </div>
+      </div> 
+
     </div>
   )
 }
