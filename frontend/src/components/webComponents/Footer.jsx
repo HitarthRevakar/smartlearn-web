@@ -12,8 +12,8 @@ import smartlearnlogofooter from '../../assets/images/png/smartlearn-logo-for-fo
 const Footer = () => {
 
   return (
-    <footer className="bg-black text-white">
-      <div className="w-full mx-auto px-6 py-12">
+    <footer className="bg-black text-white w-full h-full">
+      <div className=" mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="lg:col-span-1">
