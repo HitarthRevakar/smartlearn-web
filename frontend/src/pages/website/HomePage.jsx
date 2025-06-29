@@ -59,7 +59,7 @@ const HomePage = () => {
       <section className="w-full h-full pb-15 ">
 
         {/* ------------ Hero Section ------------ */}
-        <div className='w-full flex flex-col lg:flex-row items-center justify-between px-6 md:px-12'>
+        <div className='w-full flex flex-col lg:flex-row items-center justify-between pt-10 px-6 md:px-12'>
           {/* Left Text Content */}
           <div className="lg:w-1/2 text-center lg:text-left space-y-6">
             <SlidingTextCarousel />
@@ -69,15 +69,15 @@ const HomePage = () => {
           </div>
 
           {/* Right Image and Floating Stats */}
-          <div className="lg:w-full relative mt-10 lg:mt-0 flex justify-center">
+          <div className="lg:w-full relative mt-10 lg:mt-0 flex justify-center items-center">
             {/* Blue Circle Background */}
-            <div className="w-[300px] h-[300px] md:w-full md:h-full  left-1/2 -translate-x-1/2 "></div>
+            <div className="lg:w-[300px] lg:h-[300px]  md:w-full md:h-full left-1/2 -translate-x-1/2 "></div>
 
             {/* Main Image */}
             <img
               src={heroImg}
               alt="Girl"
-              className="relative w-full h-full  object-contain"
+              className="relative  w-full h-full  object-contain"
             />
 
           </div>

@@ -28,13 +28,13 @@ const ForgotPass = () => {
   };
 
   return (
-    <div className="relative w-full h-screen md:py-12 ">
+    <div className="relative w-full min-h-screen  flex justify-center items-center">
       {/* --------------------- Background Image ------------------------ */}
       <div className="absolute inset-0 z-0">
         <img src={background} alt="Background" className="w-full h-full object-cover" />
       </div>
 
-      <div className="relative z-10 w-full px-4 lg:px-[100px] ">
+      <div className="relative z-10 w-full  px-4 lg:px-[100px] ">
         <div className="bg-[#D3DFFF] md:rounded-[50px] rounded-[30px] flex flex-col lg:flex-row items-center justify-between overflow-hidden shadow-lg">
 
           {/* ------------------------------ Left Side - Banner & Image ----------------------------------------- */}

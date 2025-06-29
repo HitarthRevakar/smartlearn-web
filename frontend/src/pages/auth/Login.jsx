@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <div className="relative w-full h-screen md:py-12">
+    <div className="relative w-full min-h-screen md:py-12 flex  justify-center items-center">
       {/* --------------------- Background Image ------------------------ */}
       <div className="absolute inset-0 z-0">
         <img
@@ -41,12 +41,12 @@ const Login = () => {
         />
       </div>
 
-      <div className="relative z-10 flex items-center justify-center h-full px-4 lg:px-20">
+      <div className="relative z-10 w-full flex items-center justify-center h-full px-4 lg:px-20 ">
         <div className="bg-[#D3DFFF] md:rounded-[50px] rounded-[30px] w-full flex flex-col lg:flex-row items-center overflow-hidden shadow-lg">
 
           {/* ------------------------------ Left Side - Banner & Image ----------------------------------------- */}
           <div className="hidden lg:flex flex-col items-center justify-between p-10 lg:w-[50%] gap-30">
-            <h2 className="text-[clamp(48px,4vw,64px)] font-bold text-center leading-[85px] text-gray-800 banner">
+            <h2 className="text-[clamp(46px,3.5vw,60px)] font-bold text-center leading-[75px] text-gray-800 banner">
               ELEVATE YOUR LEARNING TO THE NEXT LEVEL
             </h2>
             <img src={authimage} alt="Auth" className="w-72 object-contain" />

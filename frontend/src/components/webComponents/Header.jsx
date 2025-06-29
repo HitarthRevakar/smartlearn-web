@@ -79,7 +79,7 @@ const Header = () => {
       </div>
 
       {/* ----------------------------------- main navigation --------------------------------------- */}
-      <div className=" py-3 lg:px-12 px-3">
+      <div className=" py-3 lg:px-12 px-5">
         <div className="w-full flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center ">

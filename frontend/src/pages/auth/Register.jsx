@@ -53,7 +53,7 @@ const Register = () => {
     }, 1000);
   };
   return (
-    <div className="relative w-full min-h-screen md:py-12">
+    <div className="relative w-full  min-h-screen md:py-12 flex justify-center items-center">
       {/* --------------------- Background Image ------------------------ */}
       <div className="absolute inset-0 z-0">
         <img
@@ -63,12 +63,12 @@ const Register = () => {
         />
       </div>
 
-      <div className="relative z-10 flex justify-center items-center  w-full px-4 py-8 lg:px-20">
+      <div className="relative z-10 w-full flex justify-center items-center  px-4 py-8 lg:px-20">
         <div className="bg-[#D3DFFF] md:rounded-[50px] rounded-[30px] w-full flex flex-col lg:flex-row items-center overflow-hidden shadow-lg">
 
           {/* ------------------------------ Left Side - Banner & Image ----------------------------------------- */}
           <div className="w-full hidden lg:w-1/2 lg:flex flex-col justify-center items-center py-8 px-8 lg:py-12 gap-30">
-            <h2 className="text-[clamp(48px,4vw,64px)] banner font-semibold text-center leading-snug text-gray-800 mb-6 lg:mb-8">
+            <h2 className="text-[clamp(46px,3.5vw,60px)]  banner font-semibold text-center leading-[80px] text-gray-800 mb-6 lg:mb-8">
               ELEVATE YOUR LEARNING TO THE NEXT LEVEL
             </h2>
             <div className="w-full max-w-[300px] lg:max-w-[350px]">
