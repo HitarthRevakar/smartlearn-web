@@ -5,19 +5,18 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
   const educationLevels = [
   { value: '', label: 'Please Select' },
-  { value: 'high_school', label: 'High School' },
+  {value:'Secondry Education', label:'Less than High School Graduate'},
+  { value: 'high_school', label: 'High School Graduate' },
   { value: 'associate', label: 'Associate Degree' },
   { value: 'bachelor', label: 'Bachelor\'s Degree' },
-  { value: 'master', label: 'Master\'s Degree' },
-  { value: 'doctorate', label: 'Doctorate' },
-  { value: 'other', label: 'Other' }
+  { value: 'master', label: 'Graduate Degree or Higher' },
 ];
 
     const courses = [
   { value: '', label: 'Select Course' },
   { value: 'web_development', label: 'Web Development' },
   { value: 'data_science', label: 'Data Science' },
-  { value: 'mobile_development', label: 'Mobile Development' },
+  { value: 'mobile_development', label: 'Multiplatform Mobile APP Development with Web Technologies' },
   { value: 'ui_ux_design', label: 'UI/UX Design' },
   { value: 'digital_marketing', label: 'Digital Marketing' },
   { value: 'cybersecurity', label: 'Cybersecurity' },
@@ -48,7 +47,7 @@ const InquiryForm = () => {
           <Form className="space-y-6">
             {/* Full Name Field */}
             <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="fullName" className="block text-[clamp(16px,1.5vw,20px)] font-medium text-gray-700 mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <Field
@@ -65,7 +64,7 @@ const InquiryForm = () => {
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-[clamp(16px,1.5vw,20px)] font-medium text-gray-700 mb-2">
                 Email <span className="text-red-500">*</span>
               </label>
               <Field
@@ -82,7 +81,7 @@ const InquiryForm = () => {
 
             {/* Phone Field */}
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="phone" className="block text-[clamp(16px,1.5vw,20px)] font-medium text-gray-700 mb-2">
                 Phone <span className="text-red-500">*</span>
               </label>
               <Field
@@ -99,7 +98,7 @@ const InquiryForm = () => {
 
             {/* Level of Education Field */}
             <div>
-              <label htmlFor="levelOfEducation" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="levelOfEducation" className="block text-[clamp(16px,1.5vw,20px)] font-medium text-gray-700 mb-2">
                 Level of Education <span className="text-red-500">*</span>
               </label>
               <Field
@@ -121,7 +120,7 @@ const InquiryForm = () => {
 
             {/* Course Interested Field */}
             <div>
-              <label htmlFor="courseInterested" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="courseInterested" className="block text-[clamp(16px,1.5vw,20px)] font-medium text-gray-700 mb-2">
                 Course Interested <span className="text-red-500">*</span>
               </label>
               <Field
@@ -149,7 +148,7 @@ const InquiryForm = () => {
                 name="subscribeToUpdates"
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
-              <label htmlFor="subscribeToUpdates" className="ml-2 block text-sm text-gray-700">
+              <label htmlFor="subscribeToUpdates" className="ml-2 block text-[clamp(16px,1.5vw,20px)] text-gray-700">
                 I subscribe to send me update and information by email.
               </label>
             </div>

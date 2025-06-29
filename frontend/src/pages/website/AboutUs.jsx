@@ -18,7 +18,7 @@ const AboutUs = () => {
           </div>
 
           {/* -------------------------------- paragraph --------------------------------------- */}
-          <div className="text-[#676767] w-full   space-y-6 leading-[32px]">
+          <div className="text-[#676767] w-full  space-y-6 leading-[32px]">
             <p>
               Lorem ipsum dolor sit amet consectetur. Egestas ut tellus scelerisque hac. Diam penatibus
               mauris lacus diam nullam. Sed eu scelerisque suspendisse sollicitudin rhoncus id suspendisse

@@ -6,13 +6,16 @@ import InquiryForm from '../../components/webComponents/InquiryForm'
 
 const Inquiry = () => {
   return (
-    <div className='w-full  flex flex-col justify-center items-center'>
+    <div className='w-full flex flex-col justify-center items-center'>
       <Banner title={"Inquiry"} image={inquirybanner} className="banner " />
-      <div className='w-full h-screen justify-center items-center flex flex-row gap-20 px-12 py-12'>
+
+      <div className='w-full justify-center items-center flex flex-row gap-20 px-12 py-[100px]'>
+        {/* ----------left side----------- */}
         <div className='lg:flex items-center justify-center hidden '>
           <img src={formimage} className='w-full h-full object-contain' />
         </div>
-        <div className='w-full h-screen flex flex-col justify-center '>
+        {/* -----------right side---------------- */}
+        <div className='w-full flex flex-col justify-center '>
           <InquiryForm />
         </div>
       </div>
