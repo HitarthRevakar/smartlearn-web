@@ -13,7 +13,7 @@ const WebRoutes = () => {
   return (
     <Routes>
       {/* ----------------------------- Admin Layout Wrapper ---------------------------- */}
-      <Route path='/' element={<WebLayoute />}>
+      <Route element={<WebLayoute />}>
 
         {/* ------------------------------ Default Route (Redirect to /dashboard) ------------------ */}
         <Route index element={<HomePage />} />
