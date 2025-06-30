@@ -8,21 +8,23 @@ import Inquiry from '../pages/website/Inquiry'
 import AboutUs from '../pages/website/AboutUs'
 import ContactUs from '../pages/website/ContactUs'
 import CourseContent from '../pages/website/CourseContent'
+import NotFound from '../components/webComponents/NotFound'
 
 const WebRoutes = () => {
   return (
     <Routes>
-      {/* ----------------------------- Admin Layout Wrapper ---------------------------- */}
-      <Route element={<WebLayoute />}>
+        {/* ----------------------------- Admin Layout Wrapper ---------------------------- */}
+        <Route path='/' element={<WebLayoute/>}>
 
         {/* ------------------------------ Default Route (Redirect to /dashboard) ------------------ */}
-        <Route index element={<HomePage />} />
-        <Route path='/courses' element={<Courses />} />
-        <Route path='/courses/coursecontent' element={<CourseContent />} />
-        <Route path='/inquiry' element={<Inquiry />} />
-        <Route path='/aboutus' element={<AboutUs />} />
-        <Route path='/contactus' element={<ContactUs />} />
-      </Route>
+            <Route index element={<HomePage />} />
+            <Route path='/courses' element={<Courses/>}/>
+            <Route path='/courses/coursecontent' element={<CourseContent/>}/>
+            <Route path='/inquiry' element={<Inquiry/>}/>
+            <Route path='/aboutus' element={<AboutUs/>}/>
+            <Route path='/contactus' element={<ContactUs/>}/>
+            <Route path="*" element={<NotFound />} />
+        </Route>
     </Routes>
   )
 }
