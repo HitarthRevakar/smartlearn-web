@@ -1,7 +1,7 @@
 // -------------------------- import links ----------------------------- //
 import React from 'react'
-import { inquiryInitialValues } from '../../formik/initialvalues/Inquiry.initialvalues'
-import { inquiryValidationSchema } from '../../formik/validations/Inquiry.validations'
+import { inquiryInitialValues } from '../../formik/initialvalues/inquiryInitialValues'
+import { inquiryValidationSchema } from '../../formik/validations/inquiryValidations'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 // ------------------------------- Raw data ---------------------------------- //

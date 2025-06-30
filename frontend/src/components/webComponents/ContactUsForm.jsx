@@ -2,8 +2,8 @@ import React from 'react'
 //----------------------------------------------import formik properties-----------------------------------------------//
 
 import { Field, Form, Formik } from "formik";
-import { initialValues } from '../../formik/initialvalues/contactUs.initialvalues';
-import {validationSchema} from '../../formik/validations/ContactUs.validations';
+import { initialValues } from '../../formik/initialvalues/contactUsInitialValues';
+import {validationSchema} from '../../formik/validations/contactUsValidations';
 
 const ContactUsForm = () => {
   return (
