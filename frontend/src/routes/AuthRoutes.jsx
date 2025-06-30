@@ -1,3 +1,4 @@
+// ------------------------------- import data ------------------------------- //
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Login from '../pages/auth/Login'
@@ -8,7 +9,7 @@ const AuthRoutes = () => {
   return (
     <>
             <Routes>
-                    {/* ---------------------------------------------------------------- Auth Route ---------------------------------------------------------------- */}
+                    {/* --------------------------------------- Auth Route ---------------------------------- */}
                     <Route path="login" element={<Login />} />
                     <Route path="forgetpass" element={<ForgotPass />} />
                     <Route path="register" element={<Register />} />

@@ -1,3 +1,4 @@
+// ------------------------------ import links --------------------------------- //
 import React from 'react'
 import aiImage from '../../assets/images/png/ai-img-dash-border.png';
 import UserIcon from '../../assets/images/png/user-icon.png';
@@ -52,26 +53,19 @@ const CourseContent = () => {
       </div>
 
       <div className="w-full max-w-full mx-auto lg:px-12 px-5 py-8 flex flex-col lg:flex-row items-start gap-10">
-
-        {/* Content Section – order-2 on small, order-1 on lg */}
         <div className="w-full lg:w-1/2 order-2 lg:order-1">
-
-          {/* Tag */}
           <span className="inline-block bg-[#EDF2FF] text-[#1488CC] border border-[#1488CC] text-xs font-semibold px-3 py-1 mt-3 rounded-full">
             Artificial Intelligence
           </span>
 
-          {/* Title */}
           <h2 className="mt-4 text-xl lg:text-2xl font-semibold text-gray-900">
             Introduction to Machine Learning using Python (Linear Regression)
           </h2>
 
-          {/* Description */}
           <p className="mt-3 text-gray-700 text-sm leading-relaxed">
             Machine Learning in Python offers a wide range of tools and libraries for various tasks, including Regression. One popular approach is Linear Regression, a fundamental technique for predicting numerical values based on input data.
           </p>
 
-          {/* Author & Students */}
           <div className="flex items-center gap-4 mt-5">
             <img
               src={UserIcon}
@@ -87,7 +81,6 @@ const CourseContent = () => {
           <p className="text-sm mt-5 text-gray-500">0 enrolled Students</p>
         </div>
 
-        {/* Image Section – order-1 on small, order-2 on lg */}
         <div className="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center">
           <img
             src={aiImage}
@@ -98,7 +91,7 @@ const CourseContent = () => {
       </div>
 
       <div className="w-full  mx-auto lg:px-12 px-5 py-6 grid lg:grid-cols-2 gap-12">
-        {/* Left Column – Course Overview */}
+        {/* ------------------------------ Left Column – Course Overview ----------------------------- */}
         <div>
           <h2 className="text-[clamp(24px,4.8vw,32px)] font-medium text-gray-900 mb-4">Course Overview</h2>
           <p className="text-[clamp(16px,2.8vw,24px)] text-gray-400 leading-relaxed mb-4">
@@ -128,7 +121,7 @@ const CourseContent = () => {
           </ul>
         </div>
 
-        {/* Right Column – Course Details Card */}
+        {/* ---------------------------- Right Column – Course Details Card --------------------------- */}
         <div className=" shadow-xl w-full h-min  p-6 rounded-md border border-gray-300">
           <div className="space-y-5 text-sm text-gray-800 px-3 py-3">
             <div className="flex justify-between">
@@ -192,7 +185,6 @@ const CourseContent = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
           <div className="mt-6 text-center">
             <button className="bg-[#1488CC] hover:bg-[#0e6ca5] text-white text-sm font-semibold py-2 px-7 rounded-md cursor-pointer transition">
               Inquiry Now
@@ -255,8 +247,6 @@ const CourseContent = () => {
           ))}
         </div>
       </div>
-
-
 
     </>
   )

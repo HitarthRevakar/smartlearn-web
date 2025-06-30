@@ -1,3 +1,4 @@
+// ------------------------------ import links --------------------------------- //
 import React, { useState } from 'react'
 import heroImg from '../../assets/images/png/hero-image.png';
 import SlidingTextCarousel from '../../components/webComponents/SlidingTextCarousel';
@@ -7,6 +8,7 @@ import Instructor from '../../assets/images/png/instructor.png';
 
 import { Link } from 'react-router-dom';
 
+// ------------------------------ RAW Data ------------------------------------- //
 const courseData = [
   {
     image: '/assets/ai-img.png',
@@ -53,14 +55,12 @@ const HomePage = () => {
       ? courseData
       : courseData.filter((c) => c.category === selectedCategory);
 
-
   return (
     <>
       <section className="w-full h-full pb-15 ">
 
-        {/* ------------ Hero Section ------------ */}
+        {/* ----------------------- Hero Section -------------------------- */}
         <div className='w-full flex flex-col lg:flex-row items-center justify-between pt-10 px-6 md:px-12'>
-          {/* Left Text Content */}
           <div className="lg:w-1/2 text-center lg:text-left space-y-6">
             <SlidingTextCarousel />
             <button className="bg-[#1488CC] hover:bg-[#1488CC]/90 text-white px-6 py-3 rounded-md font-medium transition">
@@ -68,12 +68,8 @@ const HomePage = () => {
             </button>
           </div>
 
-          {/* Right Image and Floating Stats */}
           <div className="lg:w-full relative mt-10 lg:mt-0 flex justify-center items-center">
-            {/* Blue Circle Background */}
             <div className="lg:w-[300px] lg:h-[300px]  md:w-full md:h-full left-1/2 -translate-x-1/2 "></div>
-
-            {/* Main Image */}
             <img
               src={heroImg}
               alt="Girl"
@@ -84,7 +80,7 @@ const HomePage = () => {
 
         </div>
 
-        {/* ------------ Course Section --------- */}
+        {/* ------------------------- Course Section ---------------------- */}
         <div className='w-full flex flex-col bg-[#f9fbff] px-6 md:px-12 py-12'>
 
           <div className="text-start mb-8">
@@ -151,7 +147,7 @@ const HomePage = () => {
 
         </div>
 
-        {/* ---------- Instructor Detail Section ---------- */}
+        {/* ------------------- Instructor Detail Section -------------------- */}
         <div className="w-full bg-[#EDF2FF] px-6 md:px-12">
           <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-between l">
             <div className="md:w-1/2 text-center md:text-left pb-12 pt-12">
@@ -177,7 +173,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
       </section>
     </>
   )

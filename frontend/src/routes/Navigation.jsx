@@ -1,3 +1,4 @@
+// ------------------------------------ import data ---------------------------------- //
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import WebRoutes from './WebRoutes';
@@ -10,7 +11,6 @@ const Navigation = () => {
             <Route path="*" element={<WebRoutes />} />
             {/* ----------------------- Auth Routes (/auth/*) ------------------------------- */}
             <Route path='/auth/*' element={<AuthRoutes/>}/>
-
         </Routes>
     </Router>
   )

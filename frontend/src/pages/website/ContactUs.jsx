@@ -1,3 +1,4 @@
+// ------------------------------ import links --------------------------------- //
 import React from "react";
 import ContactUsForm from "../../components/webComponents/ContactUsForm";
 import callicon from "../../assets/images/png/contactus-call-icon.png";
@@ -17,7 +18,7 @@ const ContactUs = () => {
       <div className="flex flex-col w-full rounded-lg md:shadow-lg md:border border-[#EBEBEB] sm:border-0">
         <div className="flex flex-col sm:flex-col md:flex-row">
           
-          {/* ---------------------------------- left side (Contact Info.) --------------------------------- */}
+          {/* ----------------------- left side (Contact Info.) --------------------- */}
 
           <div className="lg:w-[50%] md:w-[80%] w-full flex justify-center ">
             <div className="flex flex-col w-full gap-6">

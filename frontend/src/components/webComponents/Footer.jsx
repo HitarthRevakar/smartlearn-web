@@ -1,3 +1,4 @@
+// -------------------------- import links ----------------------------- //
 import React from 'react';
 import { Link } from "react-router-dom";
 import facebook from '../../assets/images/png/facebook-icon.png'
@@ -15,7 +16,7 @@ const Footer = () => {
     <footer className="bg-black text-white w-full h-full">
       <div className=" mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
-          {/* Logo and Description */}
+          {/* ----------------------- Logo and Description  --------------------- */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <img
@@ -29,7 +30,7 @@ const Footer = () => {
               We offer high quality advanced training and are unswerving to providing the best training facilities to our students.
             </p>
 
-            {/* Social Media Icons */}
+            {/* ---------------------- Social Media Icons ---------------------- */}
             <div className="flex space-x-4">
               <a
                 href="#"
@@ -52,7 +53,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
+          {/* ---------------------------- Links -------------------------------- */}
           <div className="lg:col-span-1 lg:ms-10">
             <h3 className="text-lg font-semibold mb-6">Links</h3>
             <ul className="">
@@ -83,7 +84,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Us (USA) */}
+          {/* ------------------------ Contact Us (USA) ------------------------ */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-6">Contact Us (USA)</h3>
             <div className="space-y-7">
@@ -104,7 +105,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Us (INDIA) */}
+          {/* ----------------------- Contact Us (INDIA) ------------------------ */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-6">Contact Us (INDIA)</h3>
             <div className="space-y-4">
@@ -127,7 +128,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* --------------------------- Copyright -------------------------------- */}
       <div className="py-4">
         <div className="w-full flex justify-center items-center mx-auto px-6 py-4">
           <p className="flex items-center text-center gap-2 text-white text-sm">

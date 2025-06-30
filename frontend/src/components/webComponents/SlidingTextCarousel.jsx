@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// ------------------------- Sliding data --------------------- //
 const slides = [
   {
     title: 'FLEXIBLE LEARNING',

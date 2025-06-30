@@ -67,9 +67,7 @@ const Courses = () => {
 
   return (
     <div className="w-full ">
-
       <Banner title={"Courses"} image={CourseBanner} className="banner " />
-
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#EDF2FF] px-4 sm:px-12 py-3">
         <p className="text-sm text-gray-600 flex items-center gap-5">
           <img

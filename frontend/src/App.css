@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body{
+body {
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -15,11 +15,10 @@ body{
   font-style: normal;
 }
 
-/* Hide scrollbar for Webkit and Firefox */
 .scrollbar-hide {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
 }
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari */
+  display: none; 
 }
