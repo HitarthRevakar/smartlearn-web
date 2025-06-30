@@ -12,17 +12,17 @@ import CourseContent from '../pages/website/CourseContent'
 const WebRoutes = () => {
   return (
     <Routes>
-        {/* ----------------------------- Admin Layout Wrapper ---------------------------- */}
-        <Route path='/' element={<WebLayoute/>}>
+      {/* ----------------------------- Admin Layout Wrapper ---------------------------- */}
+      <Route path='/' element={<WebLayoute />}>
 
         {/* ------------------------------ Default Route (Redirect to /dashboard) ------------------ */}
-            <Route path='/' element={<HomePage/>}/>
-            <Route path='/courses' element={<Courses/>}/>
-            <Route path='/courses/coursecontent' element={<CourseContent/>}/>
-            <Route path='/inquiry' element={<Inquiry/>}/>
-            <Route path='/aboutus' element={<AboutUs/>}/>
-            <Route path='/contactus' element={<ContactUs/>}/>
-        </Route>
+        <Route index element={<HomePage />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/courses/coursecontent' element={<CourseContent />} />
+        <Route path='/inquiry' element={<Inquiry />} />
+        <Route path='/aboutus' element={<AboutUs />} />
+        <Route path='/contactus' element={<ContactUs />} />
+      </Route>
     </Routes>
   )
 }
