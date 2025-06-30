@@ -6,12 +6,13 @@ import AuthRoutes from './AuthRoutes';
 const Navigation = () => {
   return (
     <Router>
-        <Routes>
-            {/* ----------------------------- Public Routes ---------------------------- */}
-            <Route path="/*" element={<WebRoutes />} />
-            {/* ----------------------- Auth Routes (/auth/*) ------------------------------- */}
-            <Route path='/auth/*' element={<AuthRoutes/>}/>
-        </Routes>
+      <Routes>
+        {/* Auth Routes */}
+        <Route path="/auth/*" element={<AuthRoutes />} />
+
+        {/* Web Routes */}
+        <Route path="/*" element={<WebRoutes />} />
+      </Routes>
     </Router>
   )
 }
