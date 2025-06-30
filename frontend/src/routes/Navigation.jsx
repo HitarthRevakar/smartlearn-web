@@ -8,7 +8,7 @@ const Navigation = () => {
     <Router>
         <Routes>
             {/* ----------------------------- Public Routes ---------------------------- */}
-            <Route path="*" element={<WebRoutes />} />
+            <Route path="/*" element={<WebRoutes />} />
             {/* ----------------------- Auth Routes (/auth/*) ------------------------------- */}
             <Route path='/auth/*' element={<AuthRoutes/>}/>
         </Routes>
