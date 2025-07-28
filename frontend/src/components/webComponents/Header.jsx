@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 // -------------------------- import links ----------------------------- //
 import React, { useEffect, useState } from 'react'
 import smartlearnlogo from '../../assets/images/png/smartlearn-logo.png'
 import phoneicon from '../../assets/images/png/phone-icon.png'
 import mailicon from '../../assets/images/png/mail-icon.png'
 import closebtn from '../../assets/images/png/close-btn.png'
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation, Link } from "react-router";
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -93,9 +94,9 @@ const Header = () => {
 
           {/* ---------------------------------- Navbar --------------------------------------------- */}
           <nav className="hidden md:flex items-center xl:space-x-15 lg:space-x-15 md:space-x-7">
-            {navLinks.slice(0, 4).map((link, index) => (
+            {navLinks.map((link, index) => (
               <a
-                key={link.name}
+                key={index}
                 href={link.path}
                 className={`text-gray-700 hover:text-[#1488CC] font-medium transition-colors relative ${location.pathname === link.path ? '!text-[#1488CC] font-bold' : ''
                   }`}
@@ -146,14 +147,17 @@ const Header = () => {
                 </div>
                 <nav className="flex flex-col space-y-6 text-lg font-medium text-black">
                   {navLinks.map(link => (
-                    <a
+                    <Link
                       key={link.name}
-                      href={link.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      to={link.path}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
                       className="text-gray-700 hover:text-[#1488CC] transition-colors duration-300"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
