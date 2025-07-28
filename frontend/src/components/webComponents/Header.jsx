@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 // -------------------------- import links ----------------------------- //
 import React, { useEffect, useState } from 'react'
 import smartlearnlogo from '../../assets/images/png/smartlearn-logo.png'
 import phoneicon from '../../assets/images/png/phone-icon.png'
 import mailicon from '../../assets/images/png/mail-icon.png'
 import closebtn from '../../assets/images/png/close-btn.png'
-import { useNavigate, useLocation, Link } from "react-router";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -95,16 +94,18 @@ const Header = () => {
           {/* ---------------------------------- Navbar --------------------------------------------- */}
           <nav className="hidden md:flex items-center xl:space-x-15 lg:space-x-15 md:space-x-7">
             {navLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.path}
+                to={link.path}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`text-gray-700 hover:text-[#1488CC] font-medium transition-colors relative ${location.pathname === link.path ? '!text-[#1488CC] font-bold' : ''
                   }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
+
 
           {/* --------------------------------- Contact Us Button ----------------------------------- */}
           <div className="hidden md:block">
