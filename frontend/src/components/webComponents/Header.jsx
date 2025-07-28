@@ -109,12 +109,12 @@ const Header = () => {
 
           {/* --------------------------------- Contact Us Button ----------------------------------- */}
           <div className="hidden md:block">
-            <a
-              href={navLinks[4].path}
+            <Link
+              to={navLinks[4].path}
               className="bg-[#1488CC] hover:bg-[#1488CC]/90 text-white px-6 py-3 rounded-md font-[18px] transition-colors"
             >
               {navLinks[4].name}
-            </a>
+            </Link>
           </div>
 
           {/* ------------------------------ Mobile menu button ------------------------------------ */}
@@ -151,10 +151,6 @@ const Header = () => {
                     <Link
                       key={link.name}
                       to={link.path}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
                       className="text-gray-700 hover:text-[#1488CC] transition-colors duration-300"
                     >
                       {link.name}

@@ -8,20 +8,24 @@ import AboutUs from '../pages/website/AboutUs';
 import ContactUs from '../pages/website/ContactUs';
 import CourseContent from '../pages/website/CourseContent';
 import NotFound from '../components/webComponents/NotFound';
+import ScrollToTop from '../components/webComponents/ScrollToTop';
 
 const WebRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<WebLayoute />}>
-        <Route index element={<HomePage />} />
-        <Route path="courses" element={<Courses />} />
-        <Route path="courses/coursecontent" element={<CourseContent />} />
-        <Route path="inquiry" element={<Inquiry />} />
-        <Route path="aboutus" element={<AboutUs />} />
-        <Route path="contactus" element={<ContactUs />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<WebLayoute />}>
+          <Route index element={<HomePage />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="courses/coursecontent" element={<CourseContent />} />
+          <Route path="inquiry" element={<Inquiry />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="contactus" element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
